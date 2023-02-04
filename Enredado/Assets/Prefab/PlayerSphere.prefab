@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 3423403434238413414}
   m_Layer: 0
   m_Name: PlayerSphere
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -128,8 +128,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5330e33e0683f49eaa0356de2038b8ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dirChangeAngle: 0.1
-  playerPrefab: {fileID: 1949018095473434341}
   dir: {x: 0, y: -0.15, z: 0}
 --- !u!96 &3423403434238413414
 TrailRenderer:

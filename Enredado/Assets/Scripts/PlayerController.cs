@@ -7,71 +7,52 @@ using UnityEngine.SceneManagement;
 public class PlayerController : MonoBehaviour
 {
     [Header("Testing")]
-    [SerializeField] float dirChangeAngle = 0.1f;
+    public static float down = 0.15f;
+    public static float side = 0.2f;
     [Header("Refs")]
-    [SerializeField] private GameObject playerPrefab;
-    private Player player;
     private Rigidbody rb;
     public Vector3 dir;
 
-    public delegate void RootSplit();
-    public event RootSplit OnRootSplit;
-
     private void Awake()
     {
-        player = GetComponent<Player>();
         rb = GetComponent<Rigidbody>();
     }
 
-    private void Start()
+    public void StartGrowth()
     {
         rb.AddForce(dir, ForceMode.Force);
     }
 
-    public void Death()
+    public void StopGrowth()
     {
-        //Spawn(playerPrefab.transform.position, playerPrefab.transform.rotation);
         Destroy(rb);
     }
 
-    private PlayerController Spawn(Vector3 pos, Quaternion rot)
+    public static PlayerController Create(GameObject prefab, PlayerController parent, MoveDir moveDir, Transform player)
     {
-        var newSphere = Instantiate(playerPrefab, pos, rot);
-        var newController = newSphere.GetComponent<PlayerController>();
+        Vector3 pos = parent.transform.position;
+        Quaternion rot = parent.transform.rotation;
+
+        var newSphere = Instantiate(prefab, pos, rot, player);
+        var newController = newSphere.AddComponent<PlayerController>();
+        if (moveDir == MoveDir.Left)
+        {
+            newController.dir = GetLeftDirection(parent.dir);
+        }
+        else
+        {
+            newController.dir = GetRightDirection(parent.dir);
+        }
 
         return newController;
     }
 
-    private void Split(Vector3 dir)
+    public static Vector3 GetRightDirection(Vector3 parentDir)
     {
-        // Offset position so that both colliders dont touch?
-        Vector3 pos = new Vector3(transform.position.x - 0.2f, transform.position.y, transform.position.z); 
-        // Create a new PlayerSphere
-        PlayerController newSphere = Spawn(transform.position, transform.rotation);
-        // Change new sphere direction.
-        newSphere.dir = dir;
-        // Set as new target for camera
-        player.AddRoot(newSphere);
-
-        OnRootSplit?.Invoke();
-
+        return new Vector3(parentDir.x + side, parentDir.y, parentDir.z);
     }
-    private Vector3 GetRightDirection()
+    public static Vector3 GetLeftDirection(Vector3 parentDir)
     {
-        Vector3 right = new Vector3(dir.x + dirChangeAngle, dir.y, dir.z);
-        return right;
-    }
-    private Vector3 GetLeftDirection()
-    {
-        Vector3 left = new Vector3(dir.x - dirChangeAngle, dir.y, dir.z);
-        return left;
-    }
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.A))
-            Split(GetLeftDirection());
-        if (Input.GetKeyDown(KeyCode.D))
-            Split(GetRightDirection());
-
+        return new Vector3(parentDir.x - side, parentDir.y, parentDir.z);
     }
 }
