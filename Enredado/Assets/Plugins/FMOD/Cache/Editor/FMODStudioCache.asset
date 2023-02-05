@@ -1,5 +1,32 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-7977938986341805660
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/FullMix
+  m_EditorClassIdentifier: 
+  Path: event:/FullMix
+  Guid:
+    Data1: 1187172113
+    Data2: 1245835290
+    Data3: 631206826
+    Data4: 729979920
+  Banks:
+  - {fileID: -5920277890369664789}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 136000
 --- !u!114 &-5920277890369664789
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15,10 +42,10 @@ MonoBehaviour:
   Path: ../../../../Users/igna/Documents/Enredado/EnredadoFMOD/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638112102359371966
+  lastModified: 638112149106417122
   FileSizes:
   - Name: Desktop
-    Value: 5990432
+    Value: 6004032
   Exists: 1
 --- !u!114 &-5876959628625042673
 MonoBehaviour:
@@ -47,6 +74,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 23670
+--- !u!114 &-5020766957841922842
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/New Folder/Melodia1 2
+  m_EditorClassIdentifier: 
+  Path: event:/New Folder/Melodia1 2
+  Guid:
+    Data1: -1785097760
+    Data2: 1171047846
+    Data3: -1229174
+    Data4: -949351002
+  Banks:
+  - {fileID: -5920277890369664789}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 5521
 --- !u!114 &-3934968563430178537
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -128,6 +182,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 18500
+--- !u!114 &-2643799337632432283
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/New Folder/Melodia1 3
+  m_EditorClassIdentifier: 
+  Path: event:/New Folder/Melodia1 3
+  Guid:
+    Data1: 1312828656
+    Data2: 1253081152
+    Data3: -1001419116
+    Data4: -476880027
+  Banks:
+  - {fileID: -5920277890369664789}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 8088
 --- !u!114 &-2297980854663353380
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -151,6 +232,33 @@ MonoBehaviour:
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 136000
+--- !u!114 &-1927178422179586237
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/FullMix 2
+  m_EditorClassIdentifier: 
+  Path: event:/FullMix 2
+  Guid:
+    Data1: 1887502799
+    Data2: 1201405892
+    Data3: -944090734
+    Data4: 1253308553
+  Banks:
+  - {fileID: -5920277890369664789}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
@@ -182,6 +290,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 10522
+--- !u!114 &-481541900242818246
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/New Folder/Melodia1 1
+  m_EditorClassIdentifier: 
+  Path: event:/New Folder/Melodia1 1
+  Guid:
+    Data1: 719109974
+    Data2: 1266570312
+    Data3: 801399712
+    Data4: 543205801
+  Banks:
+  - {fileID: -5920277890369664789}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 6522
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -199,7 +334,6 @@ MonoBehaviour:
   - {fileID: -5920277890369664789}
   EditorEvents:
   - {fileID: -3756201557641009582}
-  - {fileID: 5516298885689747907}
   - {fileID: 4066351326183178970}
   - {fileID: -3934968563430178537}
   - {fileID: -2297980854663353380}
@@ -207,12 +341,17 @@ MonoBehaviour:
   - {fileID: 6732465498033136900}
   - {fileID: -5876959628625042673}
   - {fileID: -1127646221166339768}
+  - {fileID: -481541900242818246}
+  - {fileID: -5020766957841922842}
+  - {fileID: -2643799337632432283}
+  - {fileID: -7977938986341805660}
+  - {fileID: -1927178422179586237}
   EditorParameters: []
   MasterBanks:
   - {fileID: -5920277890369664789}
   StringsBanks:
   - {fileID: 8747965206729770154}
-  cacheTime: 638112102359492794
+  cacheTime: 638112149106555537
   cacheVersion: 131601
 --- !u!114 &4066351326183178970
 MonoBehaviour:
@@ -241,33 +380,6 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 9500
---- !u!114 &5516298885689747907
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Melodia1
-  m_EditorClassIdentifier: 
-  Path: event:/Melodia1
-  Guid:
-    Data1: 719109974
-    Data2: 1266570312
-    Data3: 801399712
-    Data4: 543205801
-  Banks:
-  - {fileID: -5920277890369664789}
-  IsStream: 1
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 20132
 --- !u!114 &6732465498033136900
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -310,8 +422,8 @@ MonoBehaviour:
   Path: ../../../../Users/igna/Documents/Enredado/EnredadoFMOD/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638112102359492794
+  lastModified: 638112149106555537
   FileSizes:
   - Name: Desktop
-    Value: 1044
+    Value: 1222
   Exists: 1

@@ -19,7 +19,7 @@ public class GameManager : MonoBehaviour
         platform.SetActive(false);
         UIManager.ShowUIMessage(startMessage);
         //root.StartGrowth();
-        StartCoroutine(WaitForFirstInput());
+        StartGame();//StartCoroutine(WaitForFirstInput()); //FIXME: RESTORE COMMENT, REPLACE
         Player.Instance.OnRootSplit += IncreaseCounter;
     }
 
@@ -38,6 +38,11 @@ public class GameManager : MonoBehaviour
     {
         yield return new WaitUntil(() => Input.anyKeyDown);
         hasStarted = true;
+        StartGame();
+    }
+
+    private void StartGame()
+    {
         UIManager.HideUIMessage(startMessage);
         root.StartGrowth();
         platform.transform.position = GetPosition();

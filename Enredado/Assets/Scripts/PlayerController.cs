@@ -7,8 +7,8 @@ using UnityEngine.SceneManagement;
 public class PlayerController : MonoBehaviour
 {
     [Header("Testing")]
-    public static float down = 0.15f;
-    public static float side = 0.2f;
+    public static float down = 0.1f;
+    public static float side = 0.1f;
     [Header("Refs")]
     private Rigidbody rb;
     public Vector3 dir;
@@ -55,15 +55,15 @@ public class PlayerController : MonoBehaviour
     public static Vector3 GetRightDirection(Vector3 parentDir)
     {
         float x = parentDir.x + side;
-        if (x == 0)
-            x = x + side;
+        //if (x == 0)
+        //    x = x + side;
         return new Vector3(x, parentDir.y, parentDir.z);
     }
     public static Vector3 GetLeftDirection(Vector3 parentDir)
     {
         float x = parentDir.x - side;
-        if (x == 0)
-            x = x - side;
+        //if (x == 0)
+        //    x = x - side;
         return new Vector3(x, parentDir.y, parentDir.z);
     }
 }
