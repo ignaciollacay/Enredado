@@ -1,5 +1,59 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-8763973427694695374
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Melodia2
+  m_EditorClassIdentifier: 
+  Path: event:/Melodia2
+  Guid:
+    Data1: 139029596
+    Data2: 1311765636
+    Data3: -191794540
+    Data4: -160623631
+  Banks:
+  - {fileID: -5920277890369664789}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 136000
+--- !u!114 &-7918291427836785118
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Melodia4
+  m_EditorClassIdentifier: 
+  Path: event:/Melodia4
+  Guid:
+    Data1: 623936859
+    Data2: 1088115198
+    Data3: -175890765
+    Data4: 476050890
+  Banks:
+  - {fileID: -5920277890369664789}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 136000
 --- !u!114 &-5920277890369664789
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15,11 +69,65 @@ MonoBehaviour:
   Path: ../../../../Users/igna/Documents/Enredado/EnredadoFMOD/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638111484296190955
+  lastModified: 638111905015523466
   FileSizes:
   - Name: Desktop
-    Value: 5977696
+    Value: 5985376
   Exists: 1
+--- !u!114 &-764801286720175942
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Melodia1
+  m_EditorClassIdentifier: 
+  Path: event:/Melodia1
+  Guid:
+    Data1: 719109974
+    Data2: 1266570312
+    Data3: 801399712
+    Data4: 543205801
+  Banks:
+  - {fileID: -5920277890369664789}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 22000
+--- !u!114 &-89846325981655113
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Colchon1
+  m_EditorClassIdentifier: 
+  Path: event:/Colchon1
+  Guid:
+    Data1: 1237793399
+    Data2: 1319497738
+    Data3: -1627930483
+    Data4: -860889305
+  Banks:
+  - {fileID: -5920277890369664789}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 136000
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -36,15 +144,19 @@ MonoBehaviour:
   - {fileID: 8747965206729770154}
   - {fileID: -5920277890369664789}
   EditorEvents:
-  - {fileID: 420348018261015452}
+  - {fileID: -89846325981655113}
+  - {fileID: -764801286720175942}
+  - {fileID: -8763973427694695374}
+  - {fileID: 2455318342529908265}
+  - {fileID: -7918291427836785118}
   EditorParameters: []
   MasterBanks:
   - {fileID: -5920277890369664789}
   StringsBanks:
   - {fileID: 8747965206729770154}
-  cacheTime: 638111484296324687
+  cacheTime: 638111905015625816
   cacheVersion: 131601
---- !u!114 &420348018261015452
+--- !u!114 &2455318342529908265
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -54,14 +166,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/FullMix
+  m_Name: event:/Melodia3
   m_EditorClassIdentifier: 
-  Path: event:/FullMix
+  Path: event:/Melodia3
   Guid:
-    Data1: 1187172113
-    Data2: 1245835290
-    Data3: 631206826
-    Data4: 729979920
+    Data1: 1355191834
+    Data2: 1315753623
+    Data3: 1836167338
+    Data4: 1001945737
   Banks:
   - {fileID: -5920277890369664789}
   IsStream: 1
@@ -86,8 +198,8 @@ MonoBehaviour:
   Path: ../../../../Users/igna/Documents/Enredado/EnredadoFMOD/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638111484296324687
+  lastModified: 638111905015625816
   FileSizes:
   - Name: Desktop
-    Value: 756
+    Value: 916
   Exists: 1

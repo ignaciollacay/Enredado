@@ -16,9 +16,12 @@ public class Dialogue : MonoBehaviour
             text.SetActive(false);
         }
     }
-    private void Start()
+    public void CanPlay(bool canPlay)
     {
-        Player.Instance.OnRootSplit += Show;
+        if (canPlay)
+            Player.Instance.OnRootSplit += Show;
+        else
+            Player.Instance.OnRootSplit -= Show;
     }
     private void OnTriggerEnter(Collider other)
     {

@@ -54,10 +54,16 @@ public class PlayerController : MonoBehaviour
 
     public static Vector3 GetRightDirection(Vector3 parentDir)
     {
-        return new Vector3(parentDir.x + side, parentDir.y, parentDir.z);
+        float x = parentDir.x + side;
+        if (x == 0)
+            x = x + side;
+        return new Vector3(x, parentDir.y, parentDir.z);
     }
     public static Vector3 GetLeftDirection(Vector3 parentDir)
     {
-        return new Vector3(parentDir.x - side, parentDir.y, parentDir.z);
+        float x = parentDir.x - side;
+        if (x == 0)
+            x = x - side;
+        return new Vector3(x, parentDir.y, parentDir.z);
     }
 }
