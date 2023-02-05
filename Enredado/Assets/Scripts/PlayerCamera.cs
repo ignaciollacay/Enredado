@@ -4,11 +4,30 @@ using UnityEngine;
 
 public class PlayerCamera : MonoBehaviour
 {
-    private Transform followTarget;
+    public static PlayerCamera Instance;
+    public float target { get => GetFollowTarget(); }
+    Vector3 pos;
 
-    
-    public void SetTarget(Transform target)
+    private void Awake()
     {
-        followTarget = target;
+        Instance = this;
+    }
+    private void Start()
+    {
+    }
+
+    public float GetFollowTarget()
+    {
+        if (Player.Instance.root == null)
+        {
+            Player.Instance.FindLowestRoot();
+        }
+        return Player.Instance.root.transform.position.y;
+    }
+
+    private void Update()
+    {
+        transform.position = new Vector3(transform.position.x, target, transform.position.z);
     }
 }
+

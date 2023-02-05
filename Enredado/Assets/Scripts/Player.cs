@@ -10,10 +10,10 @@ public enum MoveDir
 public class Player : MonoBehaviour
 {
     public static Player Instance;
+    public PlayerController root;
 
     [SerializeField] private GameObject playerPrefab;
     public List<PlayerController> roots = new List<PlayerController>();
-    public PlayerController root;
     [SerializeField] private GameObject playerCam;
 
     public delegate void RootSplit();
@@ -24,7 +24,11 @@ public class Player : MonoBehaviour
     private void Awake()
     {
         Instance = this;
-        StartCoroutine(WaitForFirstInput());
+    }
+
+    private void Start()
+    {
+        FindLowestRoot();
     }
 
     private void Update()
@@ -51,13 +55,24 @@ public class Player : MonoBehaviour
         {
             roots.Add(newRoots[i]);
         }
+        FindLowestRoot();
         OnRootSplit?.Invoke();
     }
 
-    private IEnumerator WaitForFirstInput()
+    public void FindLowestRoot()
     {
-        yield return new WaitUntil(()=>Input.anyKeyDown);
-        roots[0].dir = new Vector3(0, -0.15f, 0);
-        roots[0].StartGrowth();
+        if (root == null)
+        {
+            int lowest = 0;
+            for (int i = 1; i < roots.Count; i++)
+            {
+                if (roots[i].transform.position.y < roots[lowest].transform.position.y)
+                {
+                    lowest = i;
+                }
+            }
+            root = roots[lowest];
+            Debug.Log("Found lowest root " + root.gameObject);
+        }
     }
 }

@@ -13,6 +13,9 @@ public class PlayerController : MonoBehaviour
     private Rigidbody rb;
     public Vector3 dir;
 
+    public delegate void RootDeath();
+    public static event RootDeath OnRootDeath;
+
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
@@ -25,7 +28,9 @@ public class PlayerController : MonoBehaviour
 
     public void StopGrowth()
     {
+        Player.Instance.roots.Remove(this);
         Destroy(rb);
+        OnRootDeath?.Invoke();
     }
 
     public static PlayerController Create(GameObject prefab, PlayerController parent, MoveDir moveDir, Transform player)
