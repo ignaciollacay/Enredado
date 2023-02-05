@@ -17,8 +17,8 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         platform.SetActive(false);
-        root.StartGrowth();
-        StartCoroutine(ShowUIFirstInput());
+        UIManager.ShowUIMessage(startMessage);
+        //root.StartGrowth();
         StartCoroutine(WaitForFirstInput());
         Player.Instance.OnRootSplit += IncreaseCounter;
     }
@@ -34,18 +34,12 @@ public class GameManager : MonoBehaviour
             Debug.Log("There are no more dialogues left");
     }
 
-    private IEnumerator ShowUIFirstInput()
-    {
-        yield return new WaitForSeconds(2);
-        if (!hasStarted)
-            UIManager.ShowUIMessage(startMessage);
-    }
-
     private IEnumerator WaitForFirstInput()
     {
         yield return new WaitUntil(() => Input.anyKeyDown);
         hasStarted = true;
         UIManager.HideUIMessage(startMessage);
+        root.StartGrowth();
         platform.transform.position = GetPosition();
         platform.SetActive(true);
         dialogues[count].CanPlay(true);

@@ -61,8 +61,8 @@ public class Player : MonoBehaviour
 
     public void FindLowestRoot()
     {
-        if (root == null)
-        {
+        //if (root == null)
+        //{
             int lowest = 0;
             for (int i = 1; i < roots.Count; i++)
             {
@@ -73,6 +73,6 @@ public class Player : MonoBehaviour
             }
             root = roots[lowest];
             Debug.Log("Found lowest root " + root.gameObject);
-        }
+        //}
     }
 }
