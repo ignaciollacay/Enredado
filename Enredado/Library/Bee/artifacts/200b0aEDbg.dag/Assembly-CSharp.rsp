@@ -356,7 +356,7 @@
 -r:"Library/Bee/artifacts/200b0aEDbg.dag/Unity.VSCode.Editor.ref.dll"
 -r:"Library/Bee/artifacts/200b0aEDbg.dag/UnityEditor.UI.ref.dll"
 -r:"Library/Bee/artifacts/200b0aEDbg.dag/UnityEngine.UI.ref.dll"
-"Assets/Dialogue.cs"
+"Assets/Scripts/Dialogue.cs"
 "Assets/Scripts/DialogueManager.cs"
 "Assets/Scripts/GameManager.cs"
 "Assets/Scripts/MusicManager.cs"
@@ -364,6 +364,7 @@
 "Assets/Scripts/Player.cs"
 "Assets/Scripts/PlayerCamera.cs"
 "Assets/Scripts/PlayerController.cs"
+"Assets/Scripts/UIManager.cs"
 -langversion:9.0
 
 /deterministic

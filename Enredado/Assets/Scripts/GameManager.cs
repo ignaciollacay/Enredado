@@ -2,27 +2,23 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using FMOD;
-using FMODUnity;
 using System;
+using TMPro;
 
 public class GameManager : MonoBehaviour
 {
+    [SerializeField] Dialogue[] dialogues;
     [SerializeField] PlayerController root;             
     [SerializeField] GameObject platform;
-    public Dialogue[] dialogues;
-
-    private int count = 0;
-
-    private void Awake()
-    {
-        dialogues = GetComponentsInChildren<Dialogue>();
-    }
+    [SerializeField] TextMeshPro startMessage;
+    private bool hasStarted = false;
+    public int count = 0;
 
     private void Start()
     {
         platform.SetActive(false);
         root.StartGrowth();
+        StartCoroutine(ShowUIFirstInput());
         StartCoroutine(WaitForFirstInput());
         Player.Instance.OnRootSplit += IncreaseCounter;
     }
@@ -32,12 +28,24 @@ public class GameManager : MonoBehaviour
         Player.Instance.canSplit = false;
         dialogues[count].CanPlay(false);
         count++;
-        dialogues[count].CanPlay(true);
+        if (count <= dialogues.Length)
+            dialogues[count].CanPlay(true);
+        else
+            Debug.Log("There are no more dialogues left");
+    }
+
+    private IEnumerator ShowUIFirstInput()
+    {
+        yield return new WaitForSeconds(2);
+        if (!hasStarted)
+            UIManager.ShowUIMessage(startMessage);
     }
 
     private IEnumerator WaitForFirstInput()
     {
         yield return new WaitUntil(() => Input.anyKeyDown);
+        hasStarted = true;
+        UIManager.HideUIMessage(startMessage);
         platform.transform.position = GetPosition();
         platform.SetActive(true);
         dialogues[count].CanPlay(true);
@@ -53,6 +61,4 @@ public class GameManager : MonoBehaviour
     {
         SceneManager.LoadScene(0);
     }
-
-
 }
