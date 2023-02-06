@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{35afb709-942b-49a7-b2f7-c61839bb2feb}">
+		<property name="assetPath">
+			<value>Enredado_Melodía-Mix.ogg</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>187.22036281179138</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{97242bda-83f8-4220-8d1a-e5141083e0a1}</destination>
+		</relationship>
+	</object>
+</objects>

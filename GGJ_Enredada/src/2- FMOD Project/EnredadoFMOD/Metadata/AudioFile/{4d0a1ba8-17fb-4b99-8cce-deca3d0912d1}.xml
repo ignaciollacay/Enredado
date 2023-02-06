@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{4d0a1ba8-17fb-4b99-8cce-deca3d0912d1}">
+		<property name="assetPath">
+			<value>Enredado_SFX-Mix.ogg</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>129.26245833333334</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{97242bda-83f8-4220-8d1a-e5141083e0a1}</destination>
+		</relationship>
+	</object>
+</objects>
