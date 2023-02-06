@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -12,8 +13,15 @@ public class PlayerCamera : MonoBehaviour
     {
         Instance = this;
     }
-    private void Start()
+
+    private IEnumerator ReCheckPosition()
     {
+        var oldPos = target;
+        yield return new WaitForSeconds(2);
+        if (oldPos == target)
+        {
+            Player.Instance.FindLowestRoot();
+        }
     }
 
     public float GetFollowTarget()
@@ -22,6 +30,7 @@ public class PlayerCamera : MonoBehaviour
         {
             Player.Instance.FindLowestRoot();
         }
+        StartCoroutine(ReCheckPosition());
         return Player.Instance.root.transform.position.y;
     }
 

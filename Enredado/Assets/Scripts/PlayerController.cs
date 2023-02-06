@@ -30,7 +30,9 @@ public class PlayerController : MonoBehaviour
     {
         Player.Instance.roots.Remove(this);
         Destroy(rb);
+        Player.Instance.FindLowestRoot();
         OnRootDeath?.Invoke();
+        Destroy(this);
     }
 
     public static PlayerController Create(GameObject prefab, PlayerController parent, MoveDir moveDir, Transform player)
@@ -66,4 +68,18 @@ public class PlayerController : MonoBehaviour
         //    x = x - side;
         return new Vector3(x, parentDir.y, parentDir.z);
     }
+
+    //private void OnTriggerEnter(Collider other)
+    //{
+    //    if (other.CompareTag("Player"))
+    //    {
+    //        Merge(gameObject, other.gameObject);
+    //    }
+    //}
+    //public void Merge(GameObject root1, GameObject root2)
+    //{
+    //    Destroy(root1);
+    //    Destroy(root2);
+    //    PlayerController newRoot = PlayerController.Create(Player.Instance.playerPrefab, roots[i], dir, transform);
+    //}
 }
