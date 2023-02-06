@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using FMODUnity;
 using TMPro;
+using UnityEngine.Events;
 
 public class Dialogue : MonoBehaviour
 {
@@ -10,6 +11,8 @@ public class Dialogue : MonoBehaviour
     [SerializeField] private GameObject text;
     [SerializeField] private StudioEventEmitter audioEmitter;
     private bool isActive = true;
+
+    public UnityEvent OnActiveDialogue;
 
     private void Awake()
     {
@@ -53,5 +56,6 @@ public class Dialogue : MonoBehaviour
             UIManager.HideUIMessage(ui);
         text.SetActive(true);
         audioEmitter.Play();
+        OnActiveDialogue?.Invoke();
     }
 }

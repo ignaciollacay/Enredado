@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using System;
 using TMPro;
+using FMODUnity;
 
 public class GameManager : MonoBehaviour
 {
@@ -11,6 +12,9 @@ public class GameManager : MonoBehaviour
     [SerializeField] PlayerController root;             
     [SerializeField] GameObject platform;
     [SerializeField] TextMeshPro startMessage;
+    [SerializeField] TextMeshPro endMessage;
+    [SerializeField] TextMeshPro resetMessage;
+    [SerializeField] private StudioEventEmitter startMx;
     public bool hasStarted = false;
     public int count = 0;
 
@@ -20,8 +24,7 @@ public class GameManager : MonoBehaviour
     {
         platform.SetActive(false);
         UIManager.ShowUIMessage(startMessage);
-        //root.StartGrowth();
-        StartGame();//StartCoroutine(WaitForFirstInput()); //FIXME: RESTORE COMMENT, REPLACE
+        StartCoroutine(WaitForFirstInput());
         Player.Instance.OnRootSplit += IncreaseCounter;
     }
 
@@ -38,6 +41,7 @@ public class GameManager : MonoBehaviour
 
     private IEnumerator WaitForFirstInput()
     {
+        startMx.Play();
         yield return new WaitUntil(() => Input.anyKeyDown);
         hasStarted = true;
         StartGame();
@@ -47,11 +51,13 @@ public class GameManager : MonoBehaviour
     {
         UIManager.HideUIMessage(startMessage);
         root.StartGrowth();
-        lerpPosition.StartLerp();
+        lerpPosition.StartForwardLerp();
 
         platform.transform.position = GetPosition();
         platform.SetActive(true);
         dialogues[count].CanPlay(true);
+
+        StartCoroutine(LostGame());
     }
 
     private Vector3 GetPosition()
@@ -60,8 +66,23 @@ public class GameManager : MonoBehaviour
         return new Vector3(0, y, 0);
     }
 
-    public void ResetGame()
+    private IEnumerator LostGame()
     {
-        SceneManager.LoadScene(0);
+        yield return new WaitUntil(() => Player.Instance.roots.Count == 0);
+        lerpPosition.StartReverseLerp();
+        UIManager.ShowUIMessage(resetMessage);
+    }
+
+    private void ExitGame()
+    {
+        StartCoroutine(WaitForLastInput());
+        UIManager.ShowUIMessage(endMessage);
+        Application.Quit();
+    }
+
+    private IEnumerator WaitForLastInput()
+    {
+        yield return new WaitUntil(() => Input.anyKeyDown);
+        ExitGame();
     }
 }
