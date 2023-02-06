@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// OBSOLETE CLASS WITH REFERENCES AROUND PROJECT
 public class PlayerCamera : MonoBehaviour
 {
     public static PlayerCamera Instance;

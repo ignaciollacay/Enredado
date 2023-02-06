@@ -26,6 +26,7 @@ public class GameManager : MonoBehaviour
         UIManager.ShowUIMessage(startMessage);
         StartCoroutine(WaitForFirstInput());
         Player.Instance.OnRootSplit += IncreaseCounter;
+        StartCoroutine(StartingMusic());
     }
 
     private void IncreaseCounter()
@@ -38,10 +39,13 @@ public class GameManager : MonoBehaviour
         else
             Debug.Log("There are no more dialogues left");
     }
-
+    private IEnumerator StartingMusic()
+    {
+        yield return new WaitForSeconds(1);
+        startMx.Play();
+    }
     private IEnumerator WaitForFirstInput()
     {
-        startMx.Play();
         yield return new WaitUntil(() => Input.anyKeyDown);
         hasStarted = true;
         StartGame();
