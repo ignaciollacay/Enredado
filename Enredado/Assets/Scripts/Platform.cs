@@ -10,8 +10,9 @@ public class Platform : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         PlayerController root = other.GetComponent<PlayerController>();
-        Debug.Log("Platform Collision: " + gameObject + other.gameObject);
+        Debug.Log("Platform Collision: " + gameObject + other.name, other.gameObject);
         root.StopGrowth();
+
         OnPlatformCollision?.Invoke();
     }
 }

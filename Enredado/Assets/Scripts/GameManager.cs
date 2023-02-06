@@ -11,8 +11,10 @@ public class GameManager : MonoBehaviour
     [SerializeField] PlayerController root;             
     [SerializeField] GameObject platform;
     [SerializeField] TextMeshPro startMessage;
-    private bool hasStarted = false;
+    public bool hasStarted = false;
     public int count = 0;
+
+    [SerializeField] LerpPosition lerpPosition;
 
     private void Start()
     {
@@ -45,6 +47,8 @@ public class GameManager : MonoBehaviour
     {
         UIManager.HideUIMessage(startMessage);
         root.StartGrowth();
+        lerpPosition.StartLerp();
+
         platform.transform.position = GetPosition();
         platform.SetActive(true);
         dialogues[count].CanPlay(true);

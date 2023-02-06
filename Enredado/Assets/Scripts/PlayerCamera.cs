@@ -24,10 +24,10 @@ public class PlayerCamera : MonoBehaviour
         return Player.Instance.root.transform.position.y;
     }
 
-    private void Update()
-    {
-        transform.position = new Vector3(transform.position.x, target, transform.position.z);
-    }
+    //private void Update()
+    //{
+    //    transform.position = new Vector3(transform.position.x, target, transform.position.z);
+    //}
 
     private IEnumerator ReCheckPosition()
     {
@@ -39,4 +39,3 @@ public class PlayerCamera : MonoBehaviour
         }
     }
 }
-
