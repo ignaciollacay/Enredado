@@ -20,6 +20,7 @@ public class Player : MonoBehaviour
     public event RootSplit OnRootSplit;
 
     public bool canSplit;
+    public int availableSplits = 0;
 
     private void Awake()
     {
@@ -33,7 +34,7 @@ public class Player : MonoBehaviour
 
     private void Update()
     {
-        if (canSplit)
+        if (canSplit && availableSplits == 1)
         {
             if (Input.GetKeyDown(KeyCode.A))
                 Split(MoveDir.Left);
@@ -44,6 +45,7 @@ public class Player : MonoBehaviour
 
     private void Split(MoveDir dir)
     {
+        availableSplits = 0;
         List<PlayerController> newRoots = new List<PlayerController>();
         for (int i = 0; i < roots.Count; i++)
         {
@@ -61,18 +63,15 @@ public class Player : MonoBehaviour
 
     public void FindLowestRoot()
     {
-        //if (root == null)
-        //{
-            int lowest = 0;
-            for (int i = 1; i < roots.Count; i++)
+        int lowest = 0;
+        for (int i = 1; i < roots.Count; i++)
+        {
+            if (roots[i].transform.position.y < roots[lowest].transform.position.y)
             {
-                if (roots[i].transform.position.y < roots[lowest].transform.position.y)
-                {
-                    lowest = i;
-                }
+                lowest = i;
             }
-            root = roots[lowest];
-            Debug.Log("Found lowest root " + root.gameObject);
-        //}
+        }
+        root = roots[lowest];
+        Debug.Log("Found lowest root " + root.gameObject);
     }
 }

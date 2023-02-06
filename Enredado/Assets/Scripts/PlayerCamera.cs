@@ -14,29 +14,29 @@ public class PlayerCamera : MonoBehaviour
         Instance = this;
     }
 
-    private IEnumerator ReCheckPosition()
-    {
-        var oldPos = target;
-        yield return new WaitForSeconds(2);
-        if (oldPos == target)
-        {
-            Player.Instance.FindLowestRoot();
-        }
-    }
-
     public float GetFollowTarget()
     {
         if (Player.Instance.root == null)
         {
             Player.Instance.FindLowestRoot();
         }
-        StartCoroutine(ReCheckPosition());
+        //StartCoroutine(ReCheckPosition());
         return Player.Instance.root.transform.position.y;
     }
 
     private void Update()
     {
         transform.position = new Vector3(transform.position.x, target, transform.position.z);
+    }
+
+    private IEnumerator ReCheckPosition()
+    {
+        var oldPos = transform.position.y;
+        yield return new WaitForSeconds(2);
+        if (transform.position.y == oldPos)
+        {
+            Player.Instance.FindLowestRoot();
+        }
     }
 }
 

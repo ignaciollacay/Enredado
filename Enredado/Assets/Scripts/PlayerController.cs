@@ -28,9 +28,10 @@ public class PlayerController : MonoBehaviour
 
     public void StopGrowth()
     {
+        Player.Instance.root = null;
         Player.Instance.roots.Remove(this);
-        Destroy(rb);
         Player.Instance.FindLowestRoot();
+        Destroy(rb);
         OnRootDeath?.Invoke();
         Destroy(this);
     }
@@ -41,7 +42,7 @@ public class PlayerController : MonoBehaviour
         Quaternion rot = parent.transform.rotation;
 
         var newSphere = Instantiate(prefab, pos, rot, player);
-        var newController = newSphere.AddComponent<PlayerController>();
+        var newController = newSphere.GetComponent<PlayerController>();
         if (moveDir == MoveDir.Left)
         {
             newController.dir = GetLeftDirection(parent.dir);

@@ -9,7 +9,7 @@ public class Dialogue : MonoBehaviour
     [SerializeField] private TextMeshPro ui = null;
     [SerializeField] private GameObject text;
     [SerializeField] private StudioEventEmitter audioEmitter;
-
+    private bool isActive = true;
 
     private void Awake()
     {
@@ -31,9 +31,11 @@ public class Dialogue : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("Player") && isActive)
         {
+            isActive = false;
             Player.Instance.canSplit = true;
+            Player.Instance.availableSplits = 1;
             if (ui != null)
             {
                 Debug.Log("Player is inside trigger " + gameObject.name, gameObject.gameObject);
@@ -46,7 +48,7 @@ public class Dialogue : MonoBehaviour
     {
         Debug.Log("Player split on correct place");
         Player.Instance.canSplit = false;
-        GetComponent<Collider>().enabled = false;
+        //GetComponent<Collider>().enabled = false;
         if (ui != null)
             UIManager.HideUIMessage(ui);
         text.SetActive(true);
